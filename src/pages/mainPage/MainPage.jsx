@@ -1,28 +1,31 @@
 import React, { useEffect, useState } from "react";
-// import styles from "./mainPage.module.css"
 import { getData } from "../../api/api.js"
-// import {CharactersPage} from "../characters/CharactersPage"
+import { CharactersPage } from "../Characters/CharactersPage.jsx"
 
+// const Char = React.memo(CharactersPage)
 
 export const MainPage = () => {
 
     const [arrData, setArrData] = useState([])
-    console.log('arrayData', arrData)
-    useEffect(() => {
-
-        getData.getCharacters()
-            .then(res => {
-                console.log('res', res);
-                setArrData(res)
-
-            })
-            .catch(err => console.log('err', err))
+    async function initialData() {
+        try {
+            const result = await getData.getCharacters()
+            setArrData(result)
+            console.log('arrayData', result)
+        }
+        catch (err) { console.log("Loading failed: ", err) }
     }
 
+    useEffect(() => {
+        initialData()
+    }
         , [])
 
-    return <div>fffffffffffffff</div>
-    // return  <CharactersPage data={'arrayData'} />
+
+    // console.log('arrayData', arrData)
+
+    // return <Char arrData={arrData} />
+    return  <CharactersPage data={arrData} />
 
 
 
