@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { getData } from "../../api/api.js"
-import { CharactersPage } from "../Characters/CharactersPage.jsx"
-
-// const Char = React.memo(CharactersPage)
+import { CharactersPage } from "../characters/CharactersPage"
+import styles from "./mainPage.module.css"
 
 export const MainPage = () => {
 
     const [arrData, setArrData] = useState([])
+
     async function initialData() {
         try {
             const result = await getData.getCharacters()
-            setArrData(result)
+
             console.log('arrayData', result)
+
+            setArrData(result)
+
         }
         catch (err) { console.log("Loading failed: ", err) }
     }
@@ -21,11 +24,24 @@ export const MainPage = () => {
     }
         , [])
 
-
-    // console.log('arrayData', arrData)
-
-    // return <Char arrData={arrData} />
-    return  <CharactersPage data={arrData} />
+    return (
+        arrData ?
+        <div className={styles.wrap}>
+            <header>
+                <h1>Marvel</h1>
+                <div className={styles.cardContainer}>
+                {arrData.map((el, i) => {
+                    return <CharactersPage
+                        key={el.id}
+                        id={el.id}
+                        name={el.name}
+                        comics={el.comics.items} />
+                })}
+                </div>
+            </header>
+        </div>
+        : "Server is not available, try again later"
+    )
 
 
 

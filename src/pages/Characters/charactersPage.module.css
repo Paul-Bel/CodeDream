@@ -1,0 +1,18 @@
+.card {
+    width: 450px;
+    height: 380px;
+    border: 1px solid red;
+    overflow: scroll;
+    cursor: pointer;
+}
+
+.title {
+    font-size: bolt;
+    display: flex;
+    align-items: center;
+}
+
+.comicsName {
+    font-size: small;
+    margin-left: 3px;
+}

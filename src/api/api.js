@@ -18,11 +18,28 @@ const instance = axios.create({
 
 
 export const getData = {
+
     getCharacters() {
         return instance.get(`/v1/public/characters`)
             .then(response => {
-                return response.data
+                return response.data.data.results
             })
-            .catch(response => console.log('catch response', response))
-    }
+            .catch(rej => console.log('catch response', rej))
+    },
+
+    getCharacter(id) {
+        return instance.get(`/v1/public/characters/${id}`)
+        .then(response => {
+            return response.data.data.results[0]
+        })
+        .catch(rej => console.log('catch response', rej))
+    },
+
+    getComicsCharacter(id) {
+        return instance.get(`/v1/public/characters/${id}/comics`)
+        .then(response => {
+            return response.data.data.results[0]
+        })
+        .catch(rej => console.log('catch response', rej))
+    },
 }
