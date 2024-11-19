@@ -18,7 +18,6 @@ const instance = axios.create({
 
 
 export const getData = {
-
     getCharacters() {
         return instance.get(`/v1/public/characters`)
             .then(response => {
@@ -39,6 +38,15 @@ export const getData = {
         return instance.get(`/v1/public/characters/${id}/comics`)
         .then(response => {
             return response.data.data.results[0]
+        })
+        .catch(rej => console.log('catch response', rej))
+    },
+    getPandomComics(url) {
+        return instance.get(url)
+        .then(response => {
+            console.log('getPandomComics(url)',response.data.data.results)
+
+            // return response.data.data.results[0]
         })
         .catch(rej => console.log('catch response', rej))
     },

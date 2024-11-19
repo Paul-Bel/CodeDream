@@ -1,11 +1,11 @@
 import './App.css';
-import { MainPage } from './pages/mainPage/MainPage';
+import { PageHOC } from './pages/PageHOC.jsx';
 
 
 function App() {
   return (
     <div className="App">
-      <MainPage />
+      <PageHOC />
     </div>
   );
 }

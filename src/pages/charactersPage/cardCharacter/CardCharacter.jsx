@@ -1,11 +1,13 @@
 import React from "react"
-import styles from "./charactersPage.module.css"
+import styles from "./cardCharacter.module.css"
+import {getData} from "../../../api/api"
 
 
-export const CharactersPage = ({ name, comics, id }) => {
+export const CardCharacter = ({ name, comics, id }) => {
 
     const openComics = (title) => {
         alert(title)
+        getData.getPandomComics(title)
     }
 
     return <div className={styles.card}>
