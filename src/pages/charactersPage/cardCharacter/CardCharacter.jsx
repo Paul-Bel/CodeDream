@@ -1,19 +1,30 @@
 import React from "react"
 import styles from "./cardCharacter.module.css"
-import {getData} from "../../../api/api"
+
+// portrait_small	50x75px
+// portrait_medium	100x150px
+// portrait_xlarge	150x225px
+// portrait_fantastic	168x252px
+// portrait_uncanny	300x450px
+// portrait_incredible	216x324px
 
 
-export const CardCharacter = ({ name, comics, id }) => {
 
-    const openComics = (title) => {
-        alert(title)
-        getData.getPandomComics(title)
-    }
+export const CardCharacter = ({ name, comics, id, openComics, thumbnail }) => {
+'http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/portrait_fantastic.jpg'
+const size_uncanny = 'portrait_medium'
 
-    return <div className={styles.card}>
+let imageUrl = `${thumbnail.path}/${size_uncanny}.${thumbnail.extension}`
+console.log('imageUrl0', imageUrl);
+
+return <div 
+    className={styles.card}
+    // style={{ backgroundImage: `url(${imageUrl})` }}
+    >
+        <img className={styles.img} src={imageUrl} alt="img" />
         <h3>{name}</h3>
 
-        <ul>{comics.map((el, id) => {
+        <ul className={styles.cover}>{comics.map((el, id) => {
             // console.log(el.resourceURI)
             return (
                 <li

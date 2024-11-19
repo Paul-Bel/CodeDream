@@ -1,19 +1,45 @@
 .card {
+    margin-top: 1%;
     width: 450px;
     height: 380px;
-    border: 1px solid red;
-    overflow: scroll;
-
+    border-radius: 3px;
+    background: rgb(222, 217, 217);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
+.card::-webkit-scrollbar {
+    width: 7px;
+    background-color: #44224d;
+}
+
+.card::-webkit-scrollbar-thumb {
+    background-color: #223c50;
+    height: 7px;
+}
+
+.img {
+    position: absolute;
+    right: 0px;
+}
+
+.cover {
+    margin: 0 0 0 -6%;
+}
 .title {
-    font-size: bolt;
     display: flex;
     align-items: center;
     cursor: pointer;
+    border: 1px solid rgb(214, 172, 172);
+}
+.title :hover {
+    font-size: 12px;
 }
 
 .comicsName {
-    font-size: small;
+    font-size: 13px;
     margin-left: 3px;
+    border: none;
 }

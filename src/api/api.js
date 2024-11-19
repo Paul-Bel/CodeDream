@@ -44,9 +44,7 @@ export const getData = {
     getPandomComics(url) {
         return instance.get(url)
         .then(response => {
-            console.log('getPandomComics(url)',response.data.data.results)
-
-            // return response.data.data.results[0]
+            console.log('getPandomComics(url)',response.data.data.results[0])
         })
         .catch(rej => console.log('catch response', rej))
     },

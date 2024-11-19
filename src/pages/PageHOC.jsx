@@ -5,28 +5,30 @@ import { getData } from "../api/api.js"
 
 export const PageHOC = () => {
 
-    const [arrData, setArrData] = useState([])
+    const [charactersArr, setcharactersArr] = useState('')
 
     async function initialData() {
         try {
-            const result = await getData.getCharacters()
-
-            console.log('result', result,)
-
-            setArrData(result)
-
+            const characters = await getData.getCharacters()
+            setcharactersArr(characters)
+        
         }
         catch (err) { console.log("Loading failed: ", err) }
     }
 
-    useEffect(() => {
-        initialData()
+    useEffect(() => {initialData()}, [])
+
+    const openComics = (title) => {
+        console.log('comics', title)
+        getData.getPandomComics(title)
     }
-        , [])
+    
 
     return (
-        Array.isArray(arrData) ?
-            <CharactersPage arrData={arrData} /> :
+        Array.isArray(charactersArr) ?
+            <CharactersPage 
+            characters={charactersArr} 
+            openComics={openComics} /> :
             "Server is not available, try again later"
 
     )
