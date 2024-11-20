@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { CharactersPage } from "./charactersPage/CharactersPage.jsx"
-import { Loader } from "../common/loader/Loader.jsx"
+import { CharactersPage } from "./CharactersPage.jsx"
+import { Loader } from "../../common/loader/Loader.jsx"
 
-import { getData } from "../api/api.js"
+import { getData } from "../../api/api.js"
 
-export const PageHOC = () => {
+export const CharactersHOC = () => {
 
     const [loader, setLoader] = useState(true)
     const [charactersArr, setcharactersArr] = useState('')

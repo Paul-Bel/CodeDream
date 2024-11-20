@@ -21,13 +21,15 @@ export const CardCharacter = ({ name, comics, id, openComics, thumbnail, comicsR
             isComic ?
                 <>
                     <ul className={styles.cover}>{comics.map((el, id) => {
+                        let title = el.name.length > 38 ? el.name.slice(0, 38) + '...' : el.name
+                   
                         return (
                             <li
                                 key={id}
                                 className={styles.title}
                                 onClick={() => openComics(el.resourceURI, idCard)}>
                                 Comics:
-                                <span title={el.name} className={styles.comicsName}>{el.name}</span>
+                                <span title={el.name} className={styles.comicsName}>{title}</span>
                             </li>)
                     })}</ul>
 

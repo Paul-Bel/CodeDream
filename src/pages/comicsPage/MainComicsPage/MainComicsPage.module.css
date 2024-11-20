@@ -1,0 +1,12 @@
+.comicsCard{
+    display: flex;
+    width: 92%;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin: 0 0 2px 10px;
+}
+
+.title{
+    margin-left: 3px;
+    text-align: left;
+}

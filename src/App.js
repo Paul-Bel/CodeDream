@@ -1,20 +1,20 @@
-import { PageHOC } from './pages/PageHOC.jsx';
-import { ComicsPage } from './pages/comicsPage/ComicsPage.jsx'
+import { CharactersHOC } from './pages/charactersPage/CharactersHOC.jsx';
+import { ComicsHOC } from './pages/comicsPage/ComicsHOC.jsx'
 import { Route, Routes, Link } from "react-router-dom";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>Marvel</h1>
+      <h1>Marvel: Characters and comics</h1>
       <nav className="navBar">
-        <Link className="link" to="/characters">ComicsPage </Link>
-        <Link className="link" to="/"> PageHOC</Link>
+        <Link className="link" to="/comics">ComicsPage </Link>
+        <Link className="link" to="/"> CharactersHOC</Link>
       </nav>
 
       <Routes >
-        <Route path="/" element={<ComicsPage />} />
-        <Route path="characters" element={<PageHOC />} />
+        <Route path="/comics" element={<ComicsHOC />} />
+        <Route path="/" element={<CharactersHOC />} />
       </Routes>
     </div>
   );
