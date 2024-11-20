@@ -1,0 +1,41 @@
+.card {
+    margin-top: 1%;
+    width: 450px;
+    height: 350px;
+    border-radius: 3px;
+    background: rgb(222, 217, 217);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+    /* position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll; */
+}
+
+.name {
+    margin: 0 auto
+}
+
+.card::-webkit-scrollbar {
+    width: 7px;
+    background-color: #4d2a22;
+}
+
+.card::-webkit-scrollbar-thumb {
+    background-color: #778188;
+    height: 7px;
+}
+
+
+.imgContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    margin: 2px;
+}
+
+.price {
+    margin-left: 2px;
+}

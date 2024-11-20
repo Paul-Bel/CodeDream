@@ -6,18 +6,10 @@
     background: rgb(222, 217, 217);
     text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
     position: relative;
-    overflow-x: hidden;
-    overflow-y: scroll;
 }
 
-.card::-webkit-scrollbar {
-    width: 7px;
-    background-color: #44224d;
-}
-
-.card::-webkit-scrollbar-thumb {
-    background-color: #223c50;
-    height: 7px;
+.name {
+    margin: 0 auto;
 }
 
 .img {
@@ -27,13 +19,29 @@
 
 .cover {
     margin: 0 0 0 -6%;
+    height: 82%;
+    width: 75%;
+    overflow-x: hidden;
+    /* overflow-y: scroll; */
 }
+
+.cover::-webkit-scrollbar {
+    width: 7px;
+    background-color: #4d2a22;
+}
+
+.cover::-webkit-scrollbar-thumb {
+    background-color: #778188;
+    height: 7px;
+}
+
 .title {
     display: flex;
     align-items: center;
     cursor: pointer;
     border: 1px solid rgb(214, 172, 172);
 }
+
 .title :hover {
     font-size: 12px;
 }
@@ -42,4 +50,9 @@
     font-size: 13px;
     margin-left: 3px;
     border: none;
+    display: flex;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
