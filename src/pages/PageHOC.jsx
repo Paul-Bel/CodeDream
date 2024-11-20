@@ -28,18 +28,14 @@ export const PageHOC = () => {
             setComicsRequest({ idRec: id, comics: { ...comicsRequest.comics } })
         try {
             if (!chech) return
-            const result = await getData.getPandomComics(title)
+            const result = await getData.getRandomComics(title)
             setComicsRequest({ idRec: id, comics: { ...result } })
-            console.log('comicsRequestssssss', result)
         }
         catch (err) { console.log("Loading failed: ", err) }
 
     }
 
     useEffect(() => { initialData() }, [])
-
-
-    console.log('comicsRequest', comicsRequest)
 
     return (
         Array.isArray(charactersArr) && !loader ?

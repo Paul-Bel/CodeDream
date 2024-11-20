@@ -39,9 +39,18 @@ export const getData = {
             .then(response => response.data.data.results[0])
             .catch(rej => console.log('catch response', rej))
     },
-    getPandomComics(url) {
+
+    getRandomComics(url) {
         return instance.get(url)
             .then(response => response.data.data.results[0])
             .catch(rej => console.log('catch response', rej))
     },
+
+    getComics(url) {
+        return instance.get(`v1/public/comics`)
+            .then(response => response.data.data.results)
+            .catch(rej => console.log('catch response', rej))
+    },
+
+    
 }
