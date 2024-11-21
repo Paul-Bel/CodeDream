@@ -1,13 +1,7 @@
-
-// import styles from "./ComicsHOC.module.css"
-
 import { useEffect, useState } from "react"
 import { Loader } from "../../common/loader/Loader"
-
 import { getData } from "../../api/api"
 import { MainComicsPage } from "./MainComicsPage/MainComicsPage"
-
-
 
 export const ComicsHOC = () => {
 

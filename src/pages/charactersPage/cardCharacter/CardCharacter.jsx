@@ -20,20 +20,21 @@ export const CardCharacter = ({ name, comics, id, openComics, thumbnail, comicsR
             <Loader /> :
             isComic ?
                 <>
-                    <ul className={styles.cover}>{comics.map((el, id) => {
-                        let title = el.name.length > 38 ? el.name.slice(0, 38) + '...' : el.name
-                   
-                        return (
-                            <li
-                                key={id}
-                                className={styles.title}
-                                onClick={() => openComics(el.resourceURI, idCard)}>
-                                Comics:
-                                <span title={el.name} className={styles.comicsName}>{title}</span>
-                            </li>)
-                    })}</ul>
-
-                </> :
+                    <ul className={styles.cover}>{
+                        Boolean(comics.length) ?
+                            comics.map((el, id) => {
+                                let title = el.name.length > 38 ? el.name.slice(0, 38) + '...' : el.name
+                                return (
+                                    <li
+                                        key={id}
+                                        className={styles.title}
+                                        onClick={() => openComics(el.resourceURI, idCard)}>
+                                        Comics:
+                                        <span title={title} className={styles.comicsName}>{title}</span>
+                                    </li>)
+                            }) :
+                            <li className={styles.title}>Coming soon...</li>}:
+                    </ul> </> :
                 <>
                     <ComicsPage
                         comicsRequest={comicsRequest}
