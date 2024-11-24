@@ -30,8 +30,9 @@ export const ComicsPage = ({ comicsRequest, openComics }) => {
                     alt="img">
                 </img>
             })}
-
         </div>
-        <button onClick={() => openComics(0, 0)}>Go back</button>
+        <button 
+        className={styles.btn}
+        onClick={() => openComics(0, 0)}>Go back</button>
     </div>
 }

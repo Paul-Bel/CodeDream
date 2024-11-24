@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
+
 import { CharactersPage } from "./CharactersPage.jsx"
 import { Loader } from "../../common/loader/Loader.jsx"
-
 import { getData } from "../../api/api.js"
 
 export const CharactersHOC = () => {
@@ -10,13 +10,11 @@ export const CharactersHOC = () => {
     const [charactersArr, setcharactersArr] = useState('')
     const [comicsRequest, setComicsRequest] = useState({ idRec: 0, comics: {} })
 
-
     async function initialData() {
         try {
             const characters = await getData.getCharacters()
             setcharactersArr(characters)
             setLoader(false)
-
         }
         catch (err) { console.log("Loading failed: ", err) }
     }
@@ -46,9 +44,5 @@ export const CharactersHOC = () => {
             loader ?
                 <Loader /> :
                 "Server is not available, try again later"
-
     )
-
-
-
 }

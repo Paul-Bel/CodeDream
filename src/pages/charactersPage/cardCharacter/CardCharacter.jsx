@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "./cardCharacter.module.css"
+import styles from "./CardCharacter.module.css"
 
 import { Loader } from "../../../common/loader/Loader"
 import { img_sizes } from "../../../common/constants"

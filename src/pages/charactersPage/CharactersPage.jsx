@@ -4,7 +4,7 @@ import styles from "./charactersPage.module.css"
 import { CardCharacter } from "./cardCharacter/CardCharacter.jsx"
 
 export const CharactersPage = ({ characters, openComics, comicsRequest }) => {
-    console.log('characters', characters);
+
     return (
         <div className={styles.wrap}>
             <div className={styles.cardContainer}>

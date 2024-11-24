@@ -34,6 +34,7 @@
   appearance: none;
   touch-action: manipulation;
   z-index: 1;
+ 
 }
 
 .link:focus-visible {
@@ -53,3 +54,9 @@
   color: #444;
   pointer-events: none;
 }
+
+/* .disabled {
+  background-color: #eee;
+  color: #444;
+  pointer-events: none;
+} */

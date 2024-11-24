@@ -11,7 +11,6 @@ export const ComicsHOC = () => {
     async function initialData() {
         try {
             const rusult = await getData.getComics()
-            console.log('comics', rusult)
             setLoader(false)
             setcomicsArr(rusult)
         }
@@ -19,8 +18,6 @@ export const ComicsHOC = () => {
     }
 
     useEffect(() => { initialData() }, [])
-
-    console.log('Array.isArray(comicsArr)', Array.isArray(comicsArr))
 
     return (
         Array.isArray(comicsArr) && !loader ?
