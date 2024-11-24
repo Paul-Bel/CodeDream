@@ -35,6 +35,6 @@ Once you have installed the dependencies, you can start the application:
     npm start
     ```
 
-2. Open your browser and navigate to `http://localhost:3000`.
+2. Open your browser and navigate to `http://localhost:3000`
 
-You should see the application running! Any changes you make i
+You should see the application running.
